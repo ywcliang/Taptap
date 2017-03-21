@@ -47,6 +47,8 @@ public class DeviceUuidFactory {
                             }
                         } catch (UnsupportedEncodingException e) {
                             //throw new RuntimeException(e);
+                            //set default string
+                            uuid = UUID.fromString("00112233");
                         }
                         // Write the value out to the prefs file
                         prefs.edit()
