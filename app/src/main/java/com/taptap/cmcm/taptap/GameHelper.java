@@ -2,9 +2,6 @@ package com.taptap.cmcm.taptap;
 
 import android.app.Activity;
 import android.content.Context;
-import android.provider.Settings;
-
-import com.flurry.android.FlurryAgent;
 
 /**
  * Created by ywc on 17/3/20.
