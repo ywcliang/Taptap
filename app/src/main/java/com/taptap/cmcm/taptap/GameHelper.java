@@ -8,8 +8,8 @@ import android.content.Context;
  */
 
 public class GameHelper {
-    private static Activity s_GameActivity = null;
-    private static Context s_Context = null;
+    public static Activity s_GameActivity = null;
+    public static Context s_Context = null;
 
     public static void initGameHelper(Context paramContext){
         s_Context = paramContext.getApplicationContext();

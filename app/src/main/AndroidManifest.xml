@@ -16,6 +16,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:theme="@android:style/Theme.NoTitleBar"
@@ -39,9 +42,18 @@
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
         </activity>
 
+        <!-- get network state -->
         <receiver android:name="com.taptap.cmcm.taptap.GameBroadCastReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- alarm to notify player -->
+        <receiver android:name="com.taptap.cmcm.taptap.utils.BroadcastReceiverAlarm"
+            android:exported="true">
+            <intent-filter android:priority="1000" >
+                <action android:name="com.taptap.cmcm.taptap.AlarmAction" />
             </intent-filter>
         </receiver>
     </application>
